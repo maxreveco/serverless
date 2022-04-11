@@ -10,9 +10,9 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    Meals.findById(req.params.id)
-      .exec()
-      .then(x => res.status(200).send(x))
+  Meals.findById(req.params.id)
+    .exec()
+    .then(x => res.status(200).send(x))
 })
 
 router.post('/', (req, res) => {
@@ -22,13 +22,13 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   Meals.findOneAndUpdate(req.params.id, req.body)
-  .then(() => res.sendStatus(204))
+    .then(() => res.sendStatus(204))
 })
 
 router.delete('/:id', (req, res) => {
-    Meals.findOneAndDelete(req.params.id)
-      .exec()
-      .then(()=> res.sendStatus(204))
+  Meals.findOneAndDelete(req.params.id)
+    .exec()
+    .then(() => res.sendStatus(204))
 })
 
 module.exports = router
